@@ -60,18 +60,115 @@ G00 Z#5		(bit up)
 
 
 (bridge slot.  80 to 91.1, 7mm deep)
+#6 = 24.5-7.0		(cutting Z height)
+#9 = 80.0		(set lower boundary)
+#10 = 91.1		(set upper boundary)
 
+#4 = #9+#1+#7		(set starting X, 2mm up from the end. Go back do clean cuts)
+G00 Z#5			(bit up)
+G00 X#4 Y#2 Z#5		(safely drive to beginning)
+G01 Z#6			(bit down)
+
+(set up a while loop to do gross cuts. While starting/current X is less than target-#1-1, go to #4, go across, come back, increment #4 by #8.)
+WHILE [#4 LT [#10-#1-#7]] DO1
+	G01 X#4		(go to current/starting X)
+	G01 Y#3		(go across)
+	G00 Y#2		(come back, fast)
+	#4 = #4+#8	(increment the X position)
+END1 
+
+#4 = #9+#1	(final cut, lower end, set X)
+G00 X#4		(go to lower end)
+G01 Y#3		(go across)
+#4 = #10-#1	(final cut, high end, set X)
+G00 X#4		(go to high end)
+G01 Y#2		(come back)
+
+G00 Z#5		(bit up)
 
 
 
 (box cut. 101.1 to 121.1, 7mm deep)
+#6 = 24.5-7.0		(cutting Z height)
+#9 = 101.1		(set lower boundary)
+#10 = 121.1		(set upper boundary)
 
+#4 = #9+#1+#7		(set starting X, 2mm up from the end. Go back do clean cuts)
+G00 Z#5			(bit up)
+G00 X#4 Y#2 Z#5		(safely drive to beginning)
+G01 Z#6			(bit down)
+
+(set up a while loop to do gross cuts. While starting/current X is less than target-#1-1, go to #4, go across, come back, increment #4 by #8.)
+WHILE [#4 LT [#10-#1-#7]] DO1
+	G01 X#4		(go to current/starting X)
+	G01 Y#3		(go across)
+	G00 Y#2		(come back, fast)
+	#4 = #4+#8	(increment the X position)
+END1 
+
+#4 = #9+#1	(final cut, lower end, set X)
+G00 X#4		(go to lower end)
+G01 Y#3		(go across)
+#4 = #10-#1	(final cut, high end, set X)
+G00 X#4		(go to high end)
+G01 Y#2		(come back)
+
+G00 Z#5		(bit up)
 
 
 
 (nut slot   695.95 to 707.05, 7mm deep)
+#6 = 24.5-7.0		(cutting Z height)
+#9 = 695.95		(set lower boundary)
+#10 = 707.05		(set upper boundary)
 
+#4 = #9+#1+#7		(set starting X, 2mm up from the end. Go back do clean cuts)
+G00 Z#5			(bit up)
+G00 X#4 Y#2 Z#5		(safely drive to beginning)
+G01 Z#6			(bit down)
+
+(set up a while loop to do gross cuts. While starting/current X is less than target-#1-1, go to #4, go across, come back, increment #4 by #8.)
+WHILE [#4 LT [#10-#1-#7]] DO1
+	G01 X#4		(go to current/starting X)
+	G01 Y#3		(go across)
+	G00 Y#2		(come back, fast)
+	#4 = #4+#8	(increment the X position)
+END1 
+
+#4 = #9+#1	(final cut, lower end, set X)
+G00 X#4		(go to lower end)
+G01 Y#3		(go across)
+#4 = #10-#1	(final cut, high end, set X)
+G00 X#4		(go to high end)
+G01 Y#2		(come back)
+
+G00 Z#5		(bit up)
 
 
 
 (headstock   732.05 to 832.05, 14.4mm deep down to 11mm target)
+#6 = 24.5-14.4		(cutting Z height)
+#9 = 732.05		(set lower boundary)
+#10 = 832.05		(set upper boundary)
+
+#4 = #9+#1+#7		(set starting X, 2mm up from the end. Go back do clean cuts)
+G00 Z#5			(bit up)
+G00 X#4 Y#2 Z#5		(safely drive to beginning)
+G01 Z#6			(bit down)
+
+(set up a while loop to do gross cuts. While starting/current X is less than target-#1-1, go to #4, go across, come back, increment #4 by #8.)
+WHILE [#4 LT [#10-#1-#7]] DO1
+	G01 X#4		(go to current/starting X)
+	G01 Y#3		(go across)
+	G00 Y#2		(come back, fast)
+	#4 = #4+#8	(increment the X position)
+END1 
+
+#4 = #9+#1	(final cut, lower end, set X)
+G00 X#4		(go to lower end)
+G01 Y#3		(go across)
+#4 = #10-#1	(final cut, high end, set X)
+G00 X#4		(go to high end)
+G01 Y#2		(come back)
+
+G00 Z#5		(bit up)
