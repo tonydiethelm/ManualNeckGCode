@@ -34,7 +34,7 @@ G00 Z35 (safe Z)
 #9 = [0.0]		(set lower boundary)
 #10 = [60.0]		(set upper boundary)
 
-#4 = [#9+#1+#7		(set starting X, 2mm up from the end. Go back do clean cuts)
+#4 = [#9+#1+#7]		(set starting X, 2mm up from the end. Go back do clean cuts)
 G00 Z#5			(bit up)
 G00 X#4 Y#2 Z#5		(safely drive to beginning)
 G01 Z#6			(bit down)
