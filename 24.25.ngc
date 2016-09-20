@@ -39,13 +39,13 @@ G00 Z#5			(bit up)
 G00 X#4 Y#2 Z#5		(safely drive to beginning)
 G01 Z#6			(bit down)
 
-(set up a while loop to do gross cuts. While starting/current X is less than target-#1-1, go to #4, go across, come back, increment #4 by #8.)
-WHILE [#4 LT [#10-#1-#7]] DO1
+(set up a o100 WHILE loop to do gross cuts. o100 WHILE starting/current X is less than target-#1-1, go to #4, go across, come back, increment #4 by #8.)
+o100 WHILE [#4 LT [#10-#1-#7]] 
 	G01 X#4		(go to current/starting X)
 	G01 Y#3		(go across)
 	G00 Y#2		(come back, fast)
 	#4 = [#4+#8]	(increment the X position)
-END1 
+o100 ENDWHILE 
 
 #4 = [#9+#1]	(final cut, lower end, set X)
 G00 X#4		(go to lower end)
@@ -69,13 +69,13 @@ G00 Z#5			(bit up)
 G00 X#4 Y#2 Z#5		(safely drive to beginning)
 G01 Z#6			(bit down)
 
-(set up a while loop to do gross cuts. While starting/current X is less than target-#1-1, go to #4, go across, come back, increment #4 by #8.)
-WHILE [#4 LT [#10-#1-#7]] DO1
+(set up a o100 WHILE loop to do gross cuts. o100 WHILE starting/current X is less than target-#1-1, go to #4, go across, come back, increment #4 by #8.)
+o100 WHILE [#4 LT [#10-#1-#7]] 
 	G01 X#4		(go to current/starting X)
 	G01 Y#3		(go across)
 	G00 Y#2		(come back, fast)
 	#4 = [#4+#8]	(increment the X position)
-END1 
+o100 ENDWHILE 
 
 #4 = [#9+#1]	(final cut, lower end, set X)
 G00 X#4		(go to lower end)
@@ -98,13 +98,13 @@ G00 Z#5			(bit up)
 G00 X#4 Y#2 Z#5		(safely drive to beginning)
 G01 Z#6			(bit down)
 
-(set up a while loop to do gross cuts. While starting/current X is less than target-#1-1, go to #4, go across, come back, increment #4 by #8.)
-WHILE [#4 LT [#10-#1-#7]] DO1
+(set up a o100 WHILE loop to do gross cuts. o100 WHILE starting/current X is less than target-#1-1, go to #4, go across, come back, increment #4 by #8.)
+o100 WHILE [#4 LT [#10-#1-#7]] 
 	G01 X#4		(go to current/starting X)
 	G01 Y#3		(go across)
 	G00 Y#2		(come back, fast)
 	#4 = [#4+#8]	(increment the X position)
-END1 
+o100 ENDWHILE 
 
 #4 = [#9+#1]	(final cut, lower end, set X)
 G00 X#4		(go to lower end)
@@ -127,13 +127,13 @@ G00 Z#5			(bit up)
 G00 X#4 Y#2 Z#5		(safely drive to beginning)
 G01 Z#6			(bit down)
 
-(set up a while loop to do gross cuts. While starting/current X is less than target-#1-1, go to #4, go across, come back, increment #4 by #8.)
-WHILE [#4 LT [#10-#1-#7]] DO1
+(set up a o100 WHILE loop to do gross cuts. o100 WHILE starting/current X is less than target-#1-1, go to #4, go across, come back, increment #4 by #8.)
+o100 WHILE [#4 LT [#10-#1-#7]] 
 	G01 X#4		(go to current/starting X)
 	G01 Y#3		(go across)
 	G00 Y#2		(come back, fast)
 	#4 = [#4+#8]	(increment the X position)
-END1 
+o100 ENDWHILE 
 
 #4 = [#9+#1]	(final cut, lower end, set X)
 G00 X#4		(go to lower end)
@@ -156,13 +156,13 @@ G00 Z#5			(bit up)
 G00 X#4 Y#2 Z#5		(safely drive to beginning)
 G01 Z#6			(bit down)
 
-(set up a while loop to do gross cuts. While starting/current X is less than target-#1-1, go to #4, go across, come back, increment #4 by #8.)
-WHILE [#4 LT [#10-#1-#7]] DO1
+(set up a o100 WHILE loop to do gross cuts. o100 WHILE starting/current X is less than target-#1-1, go to #4, go across, come back, increment #4 by #8.)
+o100 WHILE [#4 LT [#10-#1-#7]] 
 	G01 X#4		(go to current/starting X)
 	G01 Y#3		(go across)
 	G00 Y#2		(come back, fast)
 	#4 = [#4+#8]	(increment the X position)
-END1 
+o100 ENDWHILE 
 
 #4 = [#9+#1]	(final cut, lower end, set X)
 G00 X#4		(go to lower end)
@@ -175,5 +175,5 @@ G00 Z#5		(bit up)
 
 
 M5		(stop spindle)
-M30		(end program)
+M2		(end program)
 
