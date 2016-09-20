@@ -14,27 +14,27 @@ S1	(spindle speed 1rev/min. We don't use spindle speeds, but needed for router t
 G00 Z35 (safe Z)
 
 (use #1-#33 as local variables)
-#1 = 6.2/2.0	(use for bit diameter)
-#2 = -10.0	(need a start point outside the wood on Y axis)
-#3 = 150.0	(need an end point outside the wood on the Y axis)
-#4 = 0+#1	(keep track of current X position)
-#5 = 35.0		(safe Z height)
-#6 = 24.5-7.0	(cutting Z height)
-#7 = 2.0	(amount of buffer from upper/lower boundary to keep on rough cut)
-#8 = #1		(amount of bit to use to cut)
-#9 = 0.0	(lower boundary of a slot)
-#10 = 0.0	(upper boundary of a slot)
+#1 = [6.2/2.0]	(use for bit diameter)
+#2 = [-10.0]	(need a start point outside the wood on Y axis)
+#3 = [150.0]	(need an end point outside the wood on the Y axis)
+#4 = [0+#1]	(keep track of current X position)
+#5 = [35.0]	(safe Z height)
+#6 = [24.5-7.0]	(cutting Z height)
+#7 = [2.0]	(amount of buffer from upper/lower boundary to keep on rough cut)
+#8 = [#1]	(amount of bit to use to cut)
+#9 = [0.0]	(lower boundary of a slot)
+#10 = [0.0]	(upper boundary of a slot)
 
 
 
 
 
 (back brace cut. 0 to 60, 5mm deep)
-#6 = 24.5-5.0		(cutting Z height)
-#9 = 0.0		(set lower boundary)
-#10 = 60.0		(set upper boundary)
+#6 = [24.5-5.0]		(cutting Z height)
+#9 = [0.0]		(set lower boundary)
+#10 = [60.0]		(set upper boundary)
 
-#4 = #9+#1+#7		(set starting X, 2mm up from the end. Go back do clean cuts)
+#4 = [#9+#1+#7		(set starting X, 2mm up from the end. Go back do clean cuts)
 G00 Z#5			(bit up)
 G00 X#4 Y#2 Z#5		(safely drive to beginning)
 G01 Z#6			(bit down)
@@ -44,13 +44,13 @@ WHILE [#4 LT [#10-#1-#7]] DO1
 	G01 X#4		(go to current/starting X)
 	G01 Y#3		(go across)
 	G00 Y#2		(come back, fast)
-	#4 = #4+#8	(increment the X position)
+	#4 = [#4+#8]	(increment the X position)
 END1 
 
-#4 = #9+#1	(final cut, lower end, set X)
+#4 = [#9+#1]	(final cut, lower end, set X)
 G00 X#4		(go to lower end)
 G01 Y#3		(go across)
-#4 = #10-#1	(final cut, high end, set X)
+#4 = [#10-#1]	(final cut, high end, set X)
 G00 X#4		(go to high end)
 G01 Y#2		(come back)
 
@@ -60,11 +60,11 @@ G00 Z#5		(bit up)
 
 
 (bridge slot.  80 to 91.1, 7mm deep)
-#6 = 24.5-7.0		(cutting Z height)
-#9 = 80.0		(set lower boundary)
-#10 = 91.1		(set upper boundary)
+#6 = [24.5-7.0]		(cutting Z height)
+#9 = [80.0]		(set lower boundary)
+#10 = [91.1]		(set upper boundary)
 
-#4 = #9+#1+#7		(set starting X, 2mm up from the end. Go back do clean cuts)
+#4 = [#9+#1+#7]		(set starting X, 2mm up from the end. Go back do clean cuts)
 G00 Z#5			(bit up)
 G00 X#4 Y#2 Z#5		(safely drive to beginning)
 G01 Z#6			(bit down)
@@ -74,13 +74,13 @@ WHILE [#4 LT [#10-#1-#7]] DO1
 	G01 X#4		(go to current/starting X)
 	G01 Y#3		(go across)
 	G00 Y#2		(come back, fast)
-	#4 = #4+#8	(increment the X position)
+	#4 = [#4+#8]	(increment the X position)
 END1 
 
-#4 = #9+#1	(final cut, lower end, set X)
+#4 = [#9+#1]	(final cut, lower end, set X)
 G00 X#4		(go to lower end)
 G01 Y#3		(go across)
-#4 = #10-#1	(final cut, high end, set X)
+#4 = [#10-#1]	(final cut, high end, set X)
 G00 X#4		(go to high end)
 G01 Y#2		(come back)
 
@@ -89,11 +89,11 @@ G00 Z#5		(bit up)
 
 
 (box cut. 101.1 to 121.1, 7mm deep)
-#6 = 24.5-7.0		(cutting Z height)
-#9 = 101.1		(set lower boundary)
-#10 = 121.1		(set upper boundary)
+#6 = [24.5-7.0]		(cutting Z height)
+#9 = [101.1]		(set lower boundary)
+#10 = [121.1]		(set upper boundary)
 
-#4 = #9+#1+#7		(set starting X, 2mm up from the end. Go back do clean cuts)
+#4 = [#9+#1+#7]		(set starting X, 2mm up from the end. Go back do clean cuts)
 G00 Z#5			(bit up)
 G00 X#4 Y#2 Z#5		(safely drive to beginning)
 G01 Z#6			(bit down)
@@ -103,13 +103,13 @@ WHILE [#4 LT [#10-#1-#7]] DO1
 	G01 X#4		(go to current/starting X)
 	G01 Y#3		(go across)
 	G00 Y#2		(come back, fast)
-	#4 = #4+#8	(increment the X position)
+	#4 = [#4+#8]	(increment the X position)
 END1 
 
-#4 = #9+#1	(final cut, lower end, set X)
+#4 = [#9+#1]	(final cut, lower end, set X)
 G00 X#4		(go to lower end)
 G01 Y#3		(go across)
-#4 = #10-#1	(final cut, high end, set X)
+#4 = [#10-#1]	(final cut, high end, set X)
 G00 X#4		(go to high end)
 G01 Y#2		(come back)
 
@@ -118,11 +118,11 @@ G00 Z#5		(bit up)
 
 
 (nut slot   695.95 to 707.05, 7mm deep)
-#6 = 24.5-7.0		(cutting Z height)
-#9 = 695.95		(set lower boundary)
-#10 = 707.05		(set upper boundary)
+#6 = [24.5-7.0]		(cutting Z height)
+#9 = [695.95]		(set lower boundary)
+#10 = [707.05]		(set upper boundary)
 
-#4 = #9+#1+#7		(set starting X, 2mm up from the end. Go back do clean cuts)
+#4 = [#9+#1+#7]		(set starting X, 2mm up from the end. Go back do clean cuts)
 G00 Z#5			(bit up)
 G00 X#4 Y#2 Z#5		(safely drive to beginning)
 G01 Z#6			(bit down)
@@ -132,13 +132,13 @@ WHILE [#4 LT [#10-#1-#7]] DO1
 	G01 X#4		(go to current/starting X)
 	G01 Y#3		(go across)
 	G00 Y#2		(come back, fast)
-	#4 = #4+#8	(increment the X position)
+	#4 = [#4+#8]	(increment the X position)
 END1 
 
-#4 = #9+#1	(final cut, lower end, set X)
+#4 = [#9+#1]	(final cut, lower end, set X)
 G00 X#4		(go to lower end)
 G01 Y#3		(go across)
-#4 = #10-#1	(final cut, high end, set X)
+#4 = [#10-#1]	(final cut, high end, set X)
 G00 X#4		(go to high end)
 G01 Y#2		(come back)
 
@@ -147,11 +147,11 @@ G00 Z#5		(bit up)
 
 
 (headstock   732.05 to 832.05, 14.4mm deep down to 11mm target)
-#6 = 24.5-14.4		(cutting Z height)
-#9 = 732.05		(set lower boundary)
-#10 = 832.05		(set upper boundary)
+#6 = [24.5-14.4]		(cutting Z height)
+#9 = [732.05]		(set lower boundary)
+#10 = [832.05]		(set upper boundary)
 
-#4 = #9+#1+#7		(set starting X, 2mm up from the end. Go back do clean cuts)
+#4 = [#9+#1+#7]		(set starting X, 2mm up from the end. Go back do clean cuts)
 G00 Z#5			(bit up)
 G00 X#4 Y#2 Z#5		(safely drive to beginning)
 G01 Z#6			(bit down)
@@ -161,14 +161,19 @@ WHILE [#4 LT [#10-#1-#7]] DO1
 	G01 X#4		(go to current/starting X)
 	G01 Y#3		(go across)
 	G00 Y#2		(come back, fast)
-	#4 = #4+#8	(increment the X position)
+	#4 = [#4+#8]	(increment the X position)
 END1 
 
-#4 = #9+#1	(final cut, lower end, set X)
+#4 = [#9+#1]	(final cut, lower end, set X)
 G00 X#4		(go to lower end)
 G01 Y#3		(go across)
-#4 = #10-#1	(final cut, high end, set X)
+#4 = [#10-#1]	(final cut, high end, set X)
 G00 X#4		(go to high end)
 G01 Y#2		(come back)
 
 G00 Z#5		(bit up)
+
+
+M5		(stop spindle)
+M30		(end program)
+
