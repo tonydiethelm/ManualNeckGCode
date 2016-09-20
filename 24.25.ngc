@@ -37,7 +37,7 @@ G00 Z35 (safe Z)
 #4 = [#9+#1+#7]		(set starting X, 2mm up from the end. Go back do clean cuts)
 G00 Z#5			(bit up)
 G00 X#4 Y#2 Z#5		(safely drive to beginning)
-G01 Z#6			(bit down)
+M3 G01 Z#6		(router on, bit down)
 
 (set up a o100 WHILE loop to do gross cuts. o100 WHILE starting/current X is less than target-#1-1, go to #4, go across, come back, increment #4 by #8.)
 o100 WHILE [#4 LT [#10-#1-#7]] 
@@ -54,7 +54,7 @@ G01 Y#3		(go across)
 G00 X#4		(go to high end)
 G01 Y#2		(come back)
 
-G00 Z#5		(bit up)
+G00 Z#5	M5	(bit up, stop router)
 
 
 
@@ -67,7 +67,7 @@ G00 Z#5		(bit up)
 #4 = [#9+#1+#7]		(set starting X, 2mm up from the end. Go back do clean cuts)
 G00 Z#5			(bit up)
 G00 X#4 Y#2 Z#5		(safely drive to beginning)
-G01 Z#6			(bit down)
+M3 G01 Z#6		(router on, bit down)
 
 (set up a o100 WHILE loop to do gross cuts. o100 WHILE starting/current X is less than target-#1-1, go to #4, go across, come back, increment #4 by #8.)
 o101 WHILE [#4 LT [#10-#1-#7]] 
@@ -84,7 +84,7 @@ G01 Y#3		(go across)
 G00 X#4		(go to high end)
 G01 Y#2		(come back)
 
-G00 Z#5		(bit up)
+G00 Z#5	M5	(bit up, stop router)
 
 
 
@@ -96,7 +96,7 @@ G00 Z#5		(bit up)
 #4 = [#9+#1+#7]		(set starting X, 2mm up from the end. Go back do clean cuts)
 G00 Z#5			(bit up)
 G00 X#4 Y#2 Z#5		(safely drive to beginning)
-G01 Z#6			(bit down)
+M3 G01 Z#6		(router on, bit down)
 
 (set up a o100 WHILE loop to do gross cuts. o100 WHILE starting/current X is less than target-#1-1, go to #4, go across, come back, increment #4 by #8.)
 o102 WHILE [#4 LT [#10-#1-#7]] 
@@ -113,7 +113,7 @@ G01 Y#3		(go across)
 G00 X#4		(go to high end)
 G01 Y#2		(come back)
 
-G00 Z#5		(bit up)
+G00 Z#5	M5	(bit up, stop router)
 
 
 
@@ -125,7 +125,7 @@ G00 Z#5		(bit up)
 #4 = [#9+#1+#7]		(set starting X, 2mm up from the end. Go back do clean cuts)
 G00 Z#5			(bit up)
 G00 X#4 Y#2 Z#5		(safely drive to beginning)
-G01 Z#6			(bit down)
+M3 G01 Z#6		(router on, bit down)
 
 (set up a o100 WHILE loop to do gross cuts. o100 WHILE starting/current X is less than target-#1-1, go to #4, go across, come back, increment #4 by #8.)
 o103 WHILE [#4 LT [#10-#1-#7]] 
@@ -142,7 +142,7 @@ G01 Y#3		(go across)
 G00 X#4		(go to high end)
 G01 Y#2		(come back)
 
-G00 Z#5		(bit up)
+G00 Z#5	M5	(bit up, stop router)
 
 
 
@@ -154,7 +154,7 @@ G00 Z#5		(bit up)
 #4 = [#9+#1+#7]		(set starting X, 2mm up from the end. Go back do clean cuts)
 G00 Z#5			(bit up)
 G00 X#4 Y#2 Z#5		(safely drive to beginning)
-G01 Z#6			(bit down)
+M3 G01 Z#6		(router on, bit down)
 
 (set up a o100 WHILE loop to do gross cuts. o100 WHILE starting/current X is less than target-#1-1, go to #4, go across, come back, increment #4 by #8.)
 o104 WHILE [#4 LT [#10-#1-#7]] 
@@ -171,7 +171,7 @@ G01 Y#3		(go across)
 G00 X#4		(go to high end)
 G01 Y#2		(come back)
 
-G00 Z#5		(bit up)
+G00 Z#5	M5	(bit up, stop router)
 
 
 M5		(stop spindle)
