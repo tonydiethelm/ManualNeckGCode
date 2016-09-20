@@ -4,14 +4,14 @@
 (assume 1/4" bit. 6.35mm diameter. 6.2mm actually. Oh hell, use 6.2mm.)
 
 (set everything up.)
-G17	(XY plane)
+G017	(XY plane)
 G21  	(metric)
 G90	(absolute programming)
 
 F1000	(feed rate 1000mm/min)
 S1	(spindle speed 1rev/min. We don't use spindle speeds, but needed for router to turn on.)
 
-G0 Z35 (safe Z)
+G00 Z35 (safe Z)
 
 (use #1-#33 as local variables)
 #1 = [6.2/2.0]	(use for bit diameter)
@@ -35,26 +35,26 @@ G0 Z35 (safe Z)
 #10 = [60.0]		(set upper boundary)
 
 #4 = [#9+#1+#7		(set starting X, 2mm up from the end. Go back do clean cuts)
-G0 Z#5			(bit up)
-G0 X#4 Y#2 Z#5		(safely drive to beginning)
-G1 Z#6			(bit down)
+G00 Z#5			(bit up)
+G00 X#4 Y#2 Z#5		(safely drive to beginning)
+G01 Z#6			(bit down)
 
 (set up a while loop to do gross cuts. While starting/current X is less than target-#1-1, go to #4, go across, come back, increment #4 by #8.)
 WHILE [#4 LT [#10-#1-#7]] DO1
-	G1 X#4		(go to current/starting X)
-	G1 Y#3		(go across)
-	G0 Y#2		(come back, fast)
+	G01 X#4		(go to current/starting X)
+	G01 Y#3		(go across)
+	G00 Y#2		(come back, fast)
 	#4 = [#4+#8]	(increment the X position)
 END1 
 
 #4 = [#9+#1]	(final cut, lower end, set X)
-G0 X#4		(go to lower end)
-G1 Y#3		(go across)
+G00 X#4		(go to lower end)
+G01 Y#3		(go across)
 #4 = [#10-#1]	(final cut, high end, set X)
-G0 X#4		(go to high end)
-G1 Y#2		(come back)
+G00 X#4		(go to high end)
+G01 Y#2		(come back)
 
-G0 Z#5		(bit up)
+G00 Z#5		(bit up)
 
 
 
@@ -65,26 +65,26 @@ G0 Z#5		(bit up)
 #10 = [91.1]		(set upper boundary)
 
 #4 = [#9+#1+#7]		(set starting X, 2mm up from the end. Go back do clean cuts)
-G0 Z#5			(bit up)
-G0 X#4 Y#2 Z#5		(safely drive to beginning)
-G1 Z#6			(bit down)
+G00 Z#5			(bit up)
+G00 X#4 Y#2 Z#5		(safely drive to beginning)
+G01 Z#6			(bit down)
 
 (set up a while loop to do gross cuts. While starting/current X is less than target-#1-1, go to #4, go across, come back, increment #4 by #8.)
 WHILE [#4 LT [#10-#1-#7]] DO1
-	G1 X#4		(go to current/starting X)
-	G1 Y#3		(go across)
-	G0 Y#2		(come back, fast)
+	G01 X#4		(go to current/starting X)
+	G01 Y#3		(go across)
+	G00 Y#2		(come back, fast)
 	#4 = [#4+#8]	(increment the X position)
 END1 
 
 #4 = [#9+#1]	(final cut, lower end, set X)
-G0 X#4		(go to lower end)
-G1 Y#3		(go across)
+G00 X#4		(go to lower end)
+G01 Y#3		(go across)
 #4 = [#10-#1]	(final cut, high end, set X)
-G0 X#4		(go to high end)
-G1 Y#2		(come back)
+G00 X#4		(go to high end)
+G01 Y#2		(come back)
 
-G0 Z#5		(bit up)
+G00 Z#5		(bit up)
 
 
 
@@ -94,26 +94,26 @@ G0 Z#5		(bit up)
 #10 = [121.1]		(set upper boundary)
 
 #4 = [#9+#1+#7]		(set starting X, 2mm up from the end. Go back do clean cuts)
-G0 Z#5			(bit up)
-G0 X#4 Y#2 Z#5		(safely drive to beginning)
-G1 Z#6			(bit down)
+G00 Z#5			(bit up)
+G00 X#4 Y#2 Z#5		(safely drive to beginning)
+G01 Z#6			(bit down)
 
 (set up a while loop to do gross cuts. While starting/current X is less than target-#1-1, go to #4, go across, come back, increment #4 by #8.)
 WHILE [#4 LT [#10-#1-#7]] DO1
-	G1 X#4		(go to current/starting X)
-	G1 Y#3		(go across)
-	G0 Y#2		(come back, fast)
+	G01 X#4		(go to current/starting X)
+	G01 Y#3		(go across)
+	G00 Y#2		(come back, fast)
 	#4 = [#4+#8]	(increment the X position)
 END1 
 
 #4 = [#9+#1]	(final cut, lower end, set X)
-G0 X#4		(go to lower end)
-G1 Y#3		(go across)
+G00 X#4		(go to lower end)
+G01 Y#3		(go across)
 #4 = [#10-#1]	(final cut, high end, set X)
-G0 X#4		(go to high end)
-G1 Y#2		(come back)
+G00 X#4		(go to high end)
+G01 Y#2		(come back)
 
-G0 Z#5		(bit up)
+G00 Z#5		(bit up)
 
 
 
@@ -123,26 +123,26 @@ G0 Z#5		(bit up)
 #10 = [707.05]		(set upper boundary)
 
 #4 = [#9+#1+#7]		(set starting X, 2mm up from the end. Go back do clean cuts)
-G0 Z#5			(bit up)
-G0 X#4 Y#2 Z#5		(safely drive to beginning)
-G1 Z#6			(bit down)
+G00 Z#5			(bit up)
+G00 X#4 Y#2 Z#5		(safely drive to beginning)
+G01 Z#6			(bit down)
 
 (set up a while loop to do gross cuts. While starting/current X is less than target-#1-1, go to #4, go across, come back, increment #4 by #8.)
 WHILE [#4 LT [#10-#1-#7]] DO1
-	G1 X#4		(go to current/starting X)
-	G1 Y#3		(go across)
-	G0 Y#2		(come back, fast)
+	G01 X#4		(go to current/starting X)
+	G01 Y#3		(go across)
+	G00 Y#2		(come back, fast)
 	#4 = [#4+#8]	(increment the X position)
 END1 
 
 #4 = [#9+#1]	(final cut, lower end, set X)
-G0 X#4		(go to lower end)
-G1 Y#3		(go across)
+G00 X#4		(go to lower end)
+G01 Y#3		(go across)
 #4 = [#10-#1]	(final cut, high end, set X)
-G0 X#4		(go to high end)
-G1 Y#2		(come back)
+G00 X#4		(go to high end)
+G01 Y#2		(come back)
 
-G0 Z#5		(bit up)
+G00 Z#5		(bit up)
 
 
 
@@ -152,26 +152,26 @@ G0 Z#5		(bit up)
 #10 = [832.05]		(set upper boundary)
 
 #4 = [#9+#1+#7]		(set starting X, 2mm up from the end. Go back do clean cuts)
-G0 Z#5			(bit up)
-G0 X#4 Y#2 Z#5		(safely drive to beginning)
-G1 Z#6			(bit down)
+G00 Z#5			(bit up)
+G00 X#4 Y#2 Z#5		(safely drive to beginning)
+G01 Z#6			(bit down)
 
 (set up a while loop to do gross cuts. While starting/current X is less than target-#1-1, go to #4, go across, come back, increment #4 by #8.)
 WHILE [#4 LT [#10-#1-#7]] DO1
-	G1 X#4		(go to current/starting X)
-	G1 Y#3		(go across)
-	G0 Y#2		(come back, fast)
+	G01 X#4		(go to current/starting X)
+	G01 Y#3		(go across)
+	G00 Y#2		(come back, fast)
 	#4 = [#4+#8]	(increment the X position)
 END1 
 
 #4 = [#9+#1]	(final cut, lower end, set X)
-G0 X#4		(go to lower end)
-G1 Y#3		(go across)
+G00 X#4		(go to lower end)
+G01 Y#3		(go across)
 #4 = [#10-#1]	(final cut, high end, set X)
-G0 X#4		(go to high end)
-G1 Y#2		(come back)
+G00 X#4		(go to high end)
+G01 Y#2		(come back)
 
-G0 Z#5		(bit up)
+G00 Z#5		(bit up)
 
 
 M5		(stop spindle)
