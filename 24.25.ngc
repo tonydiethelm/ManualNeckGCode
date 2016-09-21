@@ -46,13 +46,20 @@ M3 G01 Z#6		(router on, bit down)
 (set up a WHILE loop to do gross cuts.)
 (WHILE starting/current X is less than target-#1-1, go to #4, go across, come back, increment #4 by #8.)
 
+#11 = 0
 o101 WHILE [#4 LT [#10-#1-#7]] 
 	G01 X#4		(go to current/starting X)
-	G01 Y#3		(go across)
-	G00 Y#2		(come back, fast)
+	o102 IF #11 EQ 0
+		G01 Y#3		(go across)
+		#11 = 1		(We are now high, next rep needs to come back)
+	o102 ELSE
+		G01 Y#2		(come back)
+		#11 = 0		(We are now low, next rep needs to go across)
+	o102 ENDIF
 	#4 = [#4+#8]	(increment the X position)
 o101 ENDWHILE 
 
+G00 Y#2		(come back, fast. Needed to reset Y so the rest of this works with minimal logic.)
 #4 = [#9+#1]	(final cut, lower end, set X)
 G00 X#4		(go to lower end)
 G01 Y#3		(go across)
