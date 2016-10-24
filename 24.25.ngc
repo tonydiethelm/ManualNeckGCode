@@ -2,7 +2,7 @@
 
 (assume 1/4" bit. 6.35mm diameter. 6.2mm actually. Oh hell, use 6.2mm.)
 
-
+(This is tested to work as of 10-23-16. -TD)
 
 
 (set everything up.)
@@ -25,7 +25,7 @@ G00 Z35 (safe Z)
 #2 = [-10.0]	(need a start point outside the wood on Y axis)
 #3 = [150.0]	(need an end point outside the wood on the Y axis)
 #4 = [0+#1]	(keep track of current X position)
-#5 = [35.0]	(safe Z height)
+#5 = [50.0]	(safe Z height)
 #6 = [24.5-7.0]	(cutting Z height)
 #7 = [2.0]	(amount of buffer from upper/lower boundary to keep on rough cut)
 #8 = [#1]	(amount of bit to use to cut)
@@ -49,7 +49,7 @@ M3 G01 Z#6		(router on, bit down)
 #11 = 0
 o101 WHILE [#4 LT [#10-#1-#7]] 
 	G01 X#4		(go to current/starting X)
-	o102 IF #11 EQ 0
+	o102 IF [#11 EQ 0]
 		G01 Y#3		(go across)
 		#11 = 1		(We are now high, next rep needs to come back)
 	o102 ELSE
