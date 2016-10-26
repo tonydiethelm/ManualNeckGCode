@@ -178,14 +178,7 @@ o<SLOTCUTS> call [#1][#2][#3][#4][#5][#6][#7][#8][#9][#10]
 (call subroutine)
 o<SLOTCUTS> call [#1][#2][#3][#4][#5][#6][#7][#8][#9][#10]
 
-(headstock   732.05 to 832.05, 14.4mm deep down to 11mm target)
-(set up variables)
-#6 = [24.5-14.4]		(cutting Z height)
-#9 = [732.05]		(set lower boundary)
-#10 = [832.05]		(set upper boundary)
-#4 = [#9+#1+#7]		(set starting X, 2mm up from the end. Go back do clean cuts)
-(call subroutine)
-o<SLOTCUTS> call [#1][#2][#3][#4][#5][#6][#7][#8][#9][#10]
+
 
 
 
