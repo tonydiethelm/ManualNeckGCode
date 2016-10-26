@@ -39,9 +39,13 @@ G00 Z35 (safe Z)
 (Set up the subroutine for slot cutting)
 
 o<SLOTCUTS> SUB
+(setup stuff)
 G00 Z#5			(bit up)
 G00 X#4 Y#2 Z#5		(safely drive to beginning)
 M3 G01 Z#6		(router on, bit down)
+
+(set up a while loop to do step downs. 
+
 
 (set up a WHILE loop to do gross cuts.)
 (WHILE starting/current X is less than target-#1-1, go to #4, go across, come back, increment #4 by #8.)
@@ -88,6 +92,15 @@ o<SLOTCUTS> call [#1][#2][#3][#4][#5][#6][#7][#8][#9][#10]
 
 (bridge slot.  80 to 91.1, 7mm deep)
 (set up variables)
+#6 = [24.5-3.0]		(cutting Z height)
+#9 = [80.0]		(set lower boundary)
+#10 = [91.1]		(set upper boundary)
+#4 = [#9+#1+#7]		(set starting X, 2mm up from the end. Go back do clean cuts)
+(call subroutine)
+o<SLOTCUTS> call [#1][#2][#3][#4][#5][#6][#7][#8][#9][#10]
+
+(bridge slot.  80 to 91.1, 7mm deep)
+(set up variables)
 #6 = [24.5-7.0]		(cutting Z height)
 #9 = [80.0]		(set lower boundary)
 #10 = [91.1]		(set upper boundary)
@@ -99,6 +112,15 @@ o<SLOTCUTS> call [#1][#2][#3][#4][#5][#6][#7][#8][#9][#10]
 
 (box cut. 101.1 to 121.1, 7mm deep)
 (set up variables)
+#6 = [24.5-3.0]		(cutting Z height)
+#9 = [101.1]		(set lower boundary)
+#10 = [121.1]		(set upper boundary)
+#4 = [#9+#1+#7]		(set starting X, 2mm up from the end. Go back do clean cuts)
+(call subroutine)
+o<SLOTCUTS> call [#1][#2][#3][#4][#5][#6][#7][#8][#9][#10]
+
+(box cut. 101.1 to 121.1, 7mm deep)
+(set up variables)
 #6 = [24.5-7.0]		(cutting Z height)
 #9 = [101.1]		(set lower boundary)
 #10 = [121.1]		(set upper boundary)
@@ -106,6 +128,17 @@ o<SLOTCUTS> call [#1][#2][#3][#4][#5][#6][#7][#8][#9][#10]
 (call subroutine)
 o<SLOTCUTS> call [#1][#2][#3][#4][#5][#6][#7][#8][#9][#10]
 
+
+
+
+(nut slot   695.95 to 707.05, 7mm deep)
+(set up variables)
+#6 = [24.5-3.0]		(cutting Z height)
+#9 = [695.95]		(set lower boundary)
+#10 = [707.05]		(set upper boundary)
+#4 = [#9+#1+#7]		(set starting X, 2mm up from the end. Go back do clean cuts)
+(call subroutine)
+o<SLOTCUTS> call [#1][#2][#3][#4][#5][#6][#7][#8][#9][#10]
 
 (nut slot   695.95 to 707.05, 7mm deep)
 (set up variables)
@@ -120,12 +153,40 @@ o<SLOTCUTS> call [#1][#2][#3][#4][#5][#6][#7][#8][#9][#10]
 
 (headstock   732.05 to 832.05, 14.4mm deep down to 11mm target)
 (set up variables)
+#6 = [24.5-4.0]		(cutting Z height)
+#9 = [732.05]		(set lower boundary)
+#10 = [832.05]		(set upper boundary)
+#4 = [#9+#1+#7]		(set starting X, 2mm up from the end. Go back do clean cuts)
+(call subroutine)
+o<SLOTCUTS> call [#1][#2][#3][#4][#5][#6][#7][#8][#9][#10]
+
+(headstock   732.05 to 832.05, 14.4mm deep down to 11mm target)
+(set up variables)
+#6 = [24.5-8.0]		(cutting Z height)
+#9 = [732.05]		(set lower boundary)
+#10 = [832.05]		(set upper boundary)
+#4 = [#9+#1+#7]		(set starting X, 2mm up from the end. Go back do clean cuts)
+(call subroutine)
+o<SLOTCUTS> call [#1][#2][#3][#4][#5][#6][#7][#8][#9][#10]
+
+(headstock   732.05 to 832.05, 14.4mm deep down to 11mm target)
+(set up variables)
+#6 = [24.5-12.0]		(cutting Z height)
+#9 = [732.05]		(set lower boundary)
+#10 = [832.05]		(set upper boundary)
+#4 = [#9+#1+#7]		(set starting X, 2mm up from the end. Go back do clean cuts)
+(call subroutine)
+o<SLOTCUTS> call [#1][#2][#3][#4][#5][#6][#7][#8][#9][#10]
+
+(headstock   732.05 to 832.05, 14.4mm deep down to 11mm target)
+(set up variables)
 #6 = [24.5-14.4]		(cutting Z height)
 #9 = [732.05]		(set lower boundary)
 #10 = [832.05]		(set upper boundary)
 #4 = [#9+#1+#7]		(set starting X, 2mm up from the end. Go back do clean cuts)
 (call subroutine)
 o<SLOTCUTS> call [#1][#2][#3][#4][#5][#6][#7][#8][#9][#10]
+
 
 
 M5		(stop spindle)
