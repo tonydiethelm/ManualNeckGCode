@@ -44,7 +44,7 @@ G00 Z#5			(bit up)
 G00 X#4 Y#2 Z#5		(safely drive to beginning)
 M3 G01 Z#6		(router on, bit down)
 
-(set up a while loop to do step downs. 
+
 
 
 (set up a WHILE loop to do gross cuts.)
